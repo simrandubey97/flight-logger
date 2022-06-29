@@ -21,24 +21,23 @@ module.exports = {
                         body:
                             `<!DOCTYPE html><html><head><meta name='viewport' content='width=device-width, initial-scale=1' /></head><body>Hi ${doc.firstname}<br><br><p>You are successfully registered.</p><br><br>Thanks,<br><br></body></html>`
                     };
-                    emailManager
-                    .sendMail(emailData)
-                    .then((response) => {
+                    // emailManager
+                    // .sendMail(emailData)
+                    // .then((response) => {
                         return resolve({ succes:true, user : doc })
-                    })
-                    .catch((error) => {
+                    // })
+                    // .catch((error) => {
                         return reject(error) 
-                    });
+                    // });
                 });
             });
         });
     },
     getProfile: function(req){
-        console.log('request', req)
         return new Promise((resolve, reject) => {
-            User.findOne({_id: req._id})
+            User.findOne({_id: req.user._id})
             .then(user => {
-                return resolve({ isAuth: true, firstname: req.user.firstname, lastname: req.user.lastname, email: req.user.email})
+                return resolve({ isAuth: true, firstname: req.user.firstname, lastname: req.user.lastname, email: req.user.email, id: req.user._id})
             })
             .catch(error => {
                 return reject(error)
@@ -47,7 +46,7 @@ module.exports = {
     },
     editProfile: function(req){
         return new Promise((resolve, reject) => {
-            User.findByIdAndUpdate(req._id, req.body, { new: true })
+            User.updateOne({_id: req.body.id}, {$set: {firstname: req.body.firstname, lastname: req.body.lastname, email: req.body.email}})
             .then(result =>{
                 return resolve(result)
             })

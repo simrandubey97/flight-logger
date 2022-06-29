@@ -104,7 +104,6 @@ module.exports = {
     },
     resetPasswordAuth: function(req){
         return new Promise((resolve, reject) => {
-            console.log('token', req.query)
             let now = moment();
             User.findOne({ resetPasswordToken: req.query.token, resetPasswordExpires: { $gt:  now} }, function(err, user) {
               if (!user) {
@@ -117,8 +116,6 @@ module.exports = {
     },
     resetPassword: function(req){
         return new Promise((resolve, reject) => {
-            console.log(req.body);
-            
             async.waterfall(
                 [
                     function(callback) {

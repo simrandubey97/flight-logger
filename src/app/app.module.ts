@@ -14,6 +14,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { CheckInvestmentReadinessComponent } from './check-investment-readiness/check-investment-readiness.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -26,13 +28,15 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
     UserProfileComponent,
     ForgetPasswordComponent,
     ResetPasswordComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    CheckInvestmentReadinessComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {

@@ -8,7 +8,7 @@ router.post('/user/register', userController.register);
 
 router.get('/user/profile', auth.authorize, userController.getProfile);
 
-router.put('/user/editPr0file', auth.authorize, userController.editProfile);
+router.put('/user/editProfile', auth.authorize, userController.editProfile);
 
 router.put('/user/changePassword', auth.authorize, userController.changePassword);
 

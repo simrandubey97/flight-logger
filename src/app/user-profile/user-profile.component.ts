@@ -28,11 +28,13 @@ export class UserProfileComponent implements OnInit {
     this.userService.getUserDetails()
     .then(user =>{
       this.userProfileForm.patchValue(user);
+      console.log('user', user)
     })
     .catch(error =>{
       this.alertService.error(error.error.message);
     })
     this.userProfileForm = this.formBuilder.group({
+      id: [],
       firstname: [{value: '', disabled: true}, Validators.required],
       lastname: [{value: '', disabled: true}, Validators.required],
       email: [{value: '', disabled: true}, [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
@@ -48,11 +50,12 @@ export class UserProfileComponent implements OnInit {
   save(){
     this.userService.editUserDetails(this.userProfileForm.value)
     .then(response=>{
-      this.userService.getUserDetails()
+      this.userService.getUserDetails();
       this.editButton = true;
       this.userProfileForm.controls['firstname'].disable();
       this.userProfileForm.controls['lastname'].disable();
       this.userProfileForm.controls['email'].disable();
+      this.router.navigate(['/']);
     })
     .catch(error =>{
       this.alertService.error(error.error.message);

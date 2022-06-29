@@ -1,0 +1,22 @@
+.title{
+    text-align: center;
+    padding: 3% 0 5%;
+}
+.image{
+    height: 300px;
+    margin: 10px;
+}
+.sub-title{
+    color: #007bff;
+}
+.text{
+    color: rgba(55, 64, 74, 0.7);
+    font-size: 20px;
+}
+.bottom{
+    text-align: center;
+    padding-top: 2%;
+}
+.bottom a{
+    font-size: 20px;
+}

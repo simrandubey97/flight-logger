@@ -1,0 +1,18 @@
+.title{
+    text-align: center;
+    padding: 2%;
+    color: #007bff;
+}
+.sub_question{
+    padding-left: 5%;
+}
+span{
+    padding-left: 2%;
+}
+label{
+    font-size: 18px;
+    font-weight: bold;
+}
+.options{
+    padding-left: 5%;
+}

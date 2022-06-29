@@ -1,0 +1,24 @@
+.container{
+    background-color: #eaf3fa;
+    padding: 0%;
+}
+.login-img{
+    height: 600px;
+    width: 600px;
+}
+.title{
+    text-align: center;
+    padding: 5%;
+    color: #f4a316;
+}
+
+.sub-title{
+    text-align: center;
+    color: #f4a316;
+}
+form{
+    padding-left: 10%;
+}
+.form-control{
+    width: 80%;
+}

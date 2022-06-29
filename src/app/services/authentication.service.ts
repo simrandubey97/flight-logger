@@ -36,7 +36,6 @@ export class AuthenticationService {
         if (user && user.isAuth) {
           sessionStorage.setItem('currentUser', JSON.stringify(user.user));
           sessionStorage.setItem('token', user.user.token);
-          // localStorage.setItem('currentUser', JSON.stringify(user.user));
           this.currentUserSubject.next(user.user);
         }
         return user.user;

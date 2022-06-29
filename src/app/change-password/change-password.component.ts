@@ -47,6 +47,7 @@ export class ChangePasswordComponent implements OnInit {
     .then(response =>{
       this.loading = false;
       this.alertService.success('Password changed');
+      this.authenticationService.logout();
       // this.router.navigate(['/']);
     })
     .catch(error =>{

@@ -1,5 +1,21 @@
-<h1>Hi {{currentUser.firstname}}!</h1>
-<p>Welcome to flight logger</p>
+<h1 class="title">Hello {{currentUser.firstname}}!</h1>
+<div class="row">
+    <div class="col-md-6">
+        <img src="../../assets/images/home_page/Dashboard.jpg" class="image" alt="Dashboard">
+    </div>
+    <div class="col-md-6">
+        <h3 class="sub-title">Investor Readiness Check</h3>
+        <p class="text">The questions in our checklist will guide you through the most relevant topics that potential investors are interested in. Think of it like an interview or a conversation with your mentor.
+        </p>
+        <p class="text">Take your time to read through the different options and chose the one that best describes your current situation.</p>
+        <p class="text">After you've gone through all the questions we'll generate a score and give you some action items.</p>
+    </div>
+    <div class="col-md-12 bottom">
+        <a class="btn btn-primary" href="/CheckInvestmentReadinessComponent" role="button">Let's Start</a>
+    </div>
+</div>
+    
+<!-- </p> -->
 <!-- <h3>All registered users:</h3> -->
 <!-- <ul>
     <li *ngFor="let user of users">
