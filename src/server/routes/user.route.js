@@ -13,4 +13,4 @@ router.put('/user/editProfile', auth.authorize, userController.editProfile);
 router.put('/user/changePassword', auth.authorize, userController.changePassword);
 
 
-module.exports = router ;
+module.exports = router;

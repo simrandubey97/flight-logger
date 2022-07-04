@@ -9,6 +9,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { CheckInvestmentReadinessComponent } from './check-investment-readiness/check-investment-readiness.component'
+import { ScoreComponent } from './score/score.component';
+import { ActionItemsComponent } from './action-items/action-items.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,7 +20,9 @@ const routes: Routes = [
   { path: 'reset/:token', component: ResetPasswordComponent },
   { path: 'user/profile', component: UserProfileComponent },
   { path: 'user/changePassword', component: ChangePasswordComponent },
-  { path: 'CheckInvestmentReadinessComponent', component: CheckInvestmentReadinessComponent }
+  { path: 'check-investment-readiness', component: CheckInvestmentReadinessComponent },
+  { path: 'investment-readiness-score', component: ScoreComponent },
+  { path: 'action-items', component: ActionItemsComponent },
 ];
 
 @NgModule({

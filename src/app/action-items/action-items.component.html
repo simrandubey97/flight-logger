@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-12">
+    <p class="title">
+      List of action items to improve you score
+    </p>
+    <table>
+      <tr>
+        <th>ACTIONS</th>
+        <th>CRITICALITY</th>
+        <th>CATEGORY</th>
+      </tr>
+      <tr *ngFor="let data of actionItems.actionItems; let i = index">
+        <td>{{data.title}}</td>
+        <td *ngIf="data.criticality === 1">High</td>
+        <td *ngIf="data.criticality === 2">Low</td>
+        <td>{{data.category.catName}}</td>
+      </tr>
+    </table>   
+    <p class="small-text">Go back to  
+      <a href="/investment-readiness-score">score card</a>
+    </p> 
+  </div>
+</div>

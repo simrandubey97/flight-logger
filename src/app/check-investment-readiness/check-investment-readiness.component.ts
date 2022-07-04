@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ScoreService } from '../services/score.service';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-check-investment-readiness',
@@ -20,6 +22,8 @@ export class CheckInvestmentReadinessComponent implements OnInit {
     private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
+        private ScoreService: ScoreService,
+        private alertService: AlertService
   ) { }
 
   ngOnInit() {
@@ -43,6 +47,13 @@ export class CheckInvestmentReadinessComponent implements OnInit {
 
   onSubmit() {
     console.log(this.readinessForm.value)
+    this.ScoreService.generateActionItemsAndscore(this.readinessForm.value)
+    .subscribe(data =>{
+      this.router.navigate(['/investment-readiness-score']);
+    },
+    error =>{
+      this.alertService.error(error.error.message);
+    })
   }
   hideQ2(){
     this.question2_NO = false;

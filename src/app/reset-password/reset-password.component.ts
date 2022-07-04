@@ -50,8 +50,6 @@ export class ResetPasswordComponent implements OnInit {
       this.alertService.success('password reset successfull');
     })
     .catch(error =>{
-      console.log(error);
-      
       this.alertService.error(error.error.message);
       this.loading = false;
     })

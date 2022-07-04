@@ -27,13 +27,15 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="question2">2. Have you executed employment agreements with all your employees (including founders)?</label>
+          <label for="question2">2. Have you executed employment agreements with all your employees (including
+            founders)?</label>
           <div class="options">
             <input type="radio" formControlName="question2" name="question2" value="yes" (click)="hideQ2()">
             <span>Yes</span>
           </div>
           <div class="options">
-            <input type="radio" formControlName="question2" name="question2" (click)="showQ2()" value="no" ng-model="abc" required>
+            <input type="radio" formControlName="question2" name="question2" (click)="showQ2()" value="no"
+              ng-model="abc" required>
             <span>No</span>
           </div>
           <section class="sub_question" *ngIf="question2_NO">
@@ -58,7 +60,7 @@
         <div class="form-group">
           <label for="question3">3. Is your brand name and logo registered?</label>
           <div class="options">
-            <input type="radio" formControlName="question3" name="question3"  (click)="hideQ3()" value="yes" required>
+            <input type="radio" formControlName="question3" name="question3" (click)="hideQ3()" value="yes" required>
             <span>Yes</span>
           </div>
           <div class="options">
@@ -81,21 +83,26 @@
           </section>
         </div>
         <div class="form-group">
-          <label for="question4">4. Is the intellectual property including trademarks, websites, patents owned by you or your startup?</label>
+          <label for="question4">4. Is the intellectual property including trademarks, websites, patents owned by you or
+            your startup?</label>
           <div class="options">
-            <input type="radio" formControlName="question4" name="question4" ng-model="questionCollections.question4" value="all owned" required>
+            <input type="radio" formControlName="question4" name="question4" ng-model="questionCollections.question4"
+              value="all owned" required>
             <span>All owned by startup</span>
           </div>
           <div class="options">
-            <input type="radio" formControlName="question4" name="question4" ng-model="questionCollections.question4" value="partially owned" required>
+            <input type="radio" formControlName="question4" name="question4" ng-model="questionCollections.question4"
+              value="partially owned" required>
             <span>Partially owned by startup</span>
           </div>
           <div class="options">
-            <input type="radio" formControlName="question4" name="question4" ng-model="questionCollections.question4" value="none owned" required>
+            <input type="radio" formControlName="question4" name="question4" ng-model="questionCollections.question4"
+              value="none owned" required>
             <span>None owned by startup</span>
           </div>
           <div class="options">
-            <input type="radio" formControlName="question4" name="question4" ng-model="questionCollections.question4" value="I dont know" required>
+            <input type="radio" formControlName="question4" name="question4" ng-model="questionCollections.question4"
+              value="I dont know" required>
             <span>I don't know</span>
           </div>
         </div>
@@ -104,28 +111,30 @@
         <div class="form-group">
           <label for="question5">5. Do you have a Terms of Service and Privacy Policy on your website?</label>
           <div class="options">
-            <input type="radio" formControlName="question5" name="question5"  (click)="showQ5()" value="yes" required>
+            <input type="radio" formControlName="question5" name="question5" (click)="showQ5()" value="yes" required>
             <span>Yes</span>
           </div>
           <div class="options">
-            <input type="radio" formControlName="question5" name="question5"  (click)="hideQ5()" value="no" required>
+            <input type="radio" formControlName="question5" name="question5" (click)="hideQ5()" value="no" required>
             <span>No</span>
           </div>
           <div class="options">
-            <input type="radio" formControlName="question5" name="question5" (click)="hideQ5()" value="I dont know" required>
+            <input type="radio" formControlName="question5" name="question5" (click)="hideQ5()" value="I dont know"
+              required>
             <span>I dont know</span>
           </div>
-            <section class="sub_question" *ngIf="question5a_NO">
-              <label for="question5a">a. Do you want us to review Terms of Service and Privacy Policy on your website?</label>
-              <div class="options">
-                <input type="radio" formControlName="question5a" name="question5a" value="yes">
-                <span>Yes</span>
-              </div>
-              <div class="options">
-                <input type="radio" formControlName="question5a" name="question5a" value="no">
-                <span>No</span>
-              </div>
-            </section>
+          <section class="sub_question" *ngIf="question5a_NO">
+            <label for="question5a">a. Do you want us to review Terms of Service and Privacy Policy on your
+              website?</label>
+            <div class="options">
+              <input type="radio" formControlName="question5a" name="question5a" value="yes">
+              <span>Yes</span>
+            </div>
+            <div class="options">
+              <input type="radio" formControlName="question5a" name="question5a" value="no">
+              <span>No</span>
+            </div>
+          </section>
         </div>
         <div class="form-group">
           <label for="question6">6. Do you have contracts in place with all your vendors and customers?</label>
@@ -138,7 +147,8 @@
             <span>No</span>
           </div>
           <div class="options">
-            <input type="radio" formControlName="question6" name="question6" (click)="hideQ6()" value="with some" required>
+            <input type="radio" formControlName="question6" name="question6" (click)="hideQ6()" value="with some"
+              required>
             <span>With some</span>
           </div>
           <section class="sub_question" *ngIf="question6a_Yes">
@@ -169,51 +179,55 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="question8">8. Have you ever taken money in a form other than equity or revenues from friends, family, advisors
+          <label for="question8">8. Have you ever taken money in a form other than equity or revenues from friends,
+            family, advisors
             etc.?</label>
+          <div class="options">
+            <input type="radio" formControlName="question8" name="question8" (click)="showQ8a()" value="yes" required>
+            <span>Yes</span>
+          </div>
+          <div class="options">
+            <input type="radio" formControlName="question8" name="question8" (click)="hideQ8a()" value="no" required>
+            <span>No</span>
+          </div>
+          <section class="sub_question" *ngIf="question8_Yes">
+            <label for="question8a">a. In what form was the money taken ?</label>
             <div class="options">
-              <input type="radio" formControlName="question8" name="question8" (click)="showQ8a()" value="yes" required>
+              <input type="radio" formControlName="question8a" name="question8a" (click)="showQ8b()" value="loan">
+              <span>Loan</span>
+            </div>
+            <div class="options">
+              <input type="radio" formControlName="question8a" name="question8a" (click)="showQ8b()" value="debentures">
+              <span>Debentures</span>
+            </div>
+            <div class="options">
+              <input type="radio" formControlName="question8a" name="question8a" (click)="showQ8b()"
+                value="convertible note">
+              <span>Convertible Note</span>
+            </div>
+          </section>
+          <section class="sub_question" *ngIf="question8a_Yes">
+            <label for="question8a">b. In what form was the money taken ?</label>
+            <div class="options">
+              <input type="radio" formControlName="question8b" name="question8b" value="yes">
               <span>Yes</span>
             </div>
             <div class="options">
-              <input type="radio" formControlName="question8" name="question8" (click)="hideQ8a()" value="no" required>
+              <input type="radio" formControlName="question8b" name="question8b" value="no">
               <span>No</span>
             </div>
-            <section class="sub_question" *ngIf="question8_Yes">
-              <label for="question8a">a. In what form was the money taken ?</label>
-              <div class="options">
-                <input type="radio" formControlName="question8a" name="question8a" (click)="showQ8b()" value="loan">
-                <span>Loan</span>
-              </div>
-              <div class="options">
-                <input type="radio" formControlName="question8a" name="question8a" (click)="showQ8b()" value="debentures">
-                <span>Debentures</span>
-              </div>
-              <div class="options">
-                <input type="radio" formControlName="question8a" name="question8a"  (click)="showQ8b()" value="convertible note">
-                <span>Convertible Note</span>
-              </div>
-            </section>
-            <section class="sub_question" *ngIf="question8a_Yes">
-              <label for="question8a">b. In what form was the money taken ?</label>
-              <div class="options">
-                <input type="radio" formControlName="question8b" name="question8b" value="yes">
-                <span>Yes</span>
-              </div>
-              <div class="options">
-                <input type="radio" formControlName="question8b" name="question8b" value="no">
-                <span>No</span>
-              </div>
-              <div class="options">
-                <input type="radio" name="question8c" value="maybe">
-                <span>Maybe</span>
-              </div>
-            </section>
+            <div class="options">
+              <input type="radio" name="question8c" value="maybe">
+              <span>Maybe</span>
+            </div>
+          </section>
         </div>
       </div>
     </div>
     <div class="row">
-      <button type="submit" class="btn brn-primary">Submit</button>
+      <div class="col-md-12 bottom">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
     </div>
   </form>
 </div>

@@ -16,6 +16,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { CheckInvestmentReadinessComponent } from './check-investment-readiness/check-investment-readiness.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScoreComponent } from './score/score.component';
+import { ActionItemsComponent } from './action-items/action-items.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ForgetPasswordComponent,
     ResetPasswordComponent,
     ChangePasswordComponent,
-    CheckInvestmentReadinessComponent
+    CheckInvestmentReadinessComponent,
+    ScoreComponent,
+    ActionItemsComponent
   ],
   imports: [
     BrowserModule,

@@ -27,4 +27,4 @@ router.post('/auth/reset/:token', authController.resetPassword);
 //     });
 //   });
 
-module.exports = router ;
+module.exports = router;
