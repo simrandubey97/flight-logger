@@ -23,4 +23,7 @@ export class UserService {
   changePassword(user){
     return this.http.put('http://localhost:3100/api/user/changePassword', user).toPromise(); 
   }
+  getUsers(){
+    return this.http.get('http://localhost:3100/api/user/all');
+  }
 }

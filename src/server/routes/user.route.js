@@ -8,6 +8,8 @@ router.post('/user/register', userController.register);
 
 router.get('/user/profile', auth.authorize, userController.getProfile);
 
+router.get('/user/all', auth.authorize, userController.getUsers);
+
 router.put('/user/editProfile', auth.authorize, userController.editProfile);
 
 router.put('/user/changePassword', auth.authorize, userController.changePassword);

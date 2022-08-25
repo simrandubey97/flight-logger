@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ScoreService } from '../services/score.service';
 import { AlertService } from '../services/alert.service';
+import { User } from '../models/user';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-check-investment-readiness',
@@ -17,14 +19,25 @@ export class CheckInvestmentReadinessComponent implements OnInit {
   question6a_Yes: boolean = false;
   question8_Yes: boolean = false;
   question8a_Yes: boolean = false;
+  currentUser: User;
 
   constructor(
     private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
         private ScoreService: ScoreService,
-        private alertService: AlertService
-  ) { }
+        private alertService: AlertService,
+        private authenticationService: AuthenticationService,
+  ) { 
+    this.authenticationService.currentUser.subscribe(user => {
+      this.currentUser = user;
+      // console.log('this.currentUser', this.currentUser);
+      
+      if(!this.currentUser){
+        this.router.navigate(['/login']);
+      }
+  });
+  }
 
   ngOnInit() {
     this.readinessForm = this.formBuilder.group({
@@ -45,11 +58,10 @@ export class CheckInvestmentReadinessComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    console.log(this.readinessForm.value)
+  onSubmit() {// console.log(this.readinessForm.value)
     this.ScoreService.generateActionItemsAndscore(this.readinessForm.value)
     .subscribe(data =>{
-      this.router.navigate(['/investment-readiness-score']);
+      this.router.navigate(['/investment-readiness-score/'+this.currentUser._id]);
     },
     error =>{
       this.alertService.error(error.error.message);

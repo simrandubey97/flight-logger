@@ -36,5 +36,14 @@ module.exports = {
         .catch(error =>{
             return res.status(400).send({ status: 'error', message: error.message ? error.message : error })
         })
+    },
+    getUsers: function (req, res){
+        userService.getUsers(req)
+        .then(user =>{
+            return res.status(200).send(user);
+        })
+        .catch(error =>{
+            return res.status(400).send({ status: 'error', message: error.message ? error.message : error })
+        })
     }
 }

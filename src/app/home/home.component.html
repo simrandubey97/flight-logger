@@ -1,5 +1,5 @@
 <h1 class="title">Hello {{currentUser.firstname}}!</h1>
-<div class="row">
+<div class="row" *ngIf="this.currentUser.role === 'user'">
     <div class="col-md-6">
         <img src="../../assets/images/home_page/Dashboard.jpg" class="image" alt="Dashboard">
     </div>
@@ -15,8 +15,24 @@
     </div>
     <div class="col-md-12 bottom" *ngIf="scoreGenerated">
         <p>Looks like you already have a score.
-        <a href="/investment-readiness-score" role="button">Click here</a> to check your score card. </p>
+        <a href="/investment-readiness-score/{{currentUser._id}}" role="button">Click here</a> to check your score card. </p>
     </div>
+</div>
+<div class="container" *ngIf="this.currentUser.role === 'admin'">
+<table>
+    <tr>
+        <th>Users</th>
+        <th>Email</th>
+        <th>View score</th>
+        <th>view action items</th>
+    </tr>
+    <tr *ngFor="let data of usersList; let i = index">
+        <td>{{data.firstname}} {{data.lastname}}</td>
+        <td>{{data.email}}</td>
+        <td><a href="/investment-readiness-score/{{data._id}}" role="button">Click here</a></td>
+        <td><a href="/action-items/{{data._id}}" role="button">Click here</a></td>
+    </tr>
+</table>
 </div>
     
 <!-- </p> -->

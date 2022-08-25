@@ -37,7 +37,7 @@ module.exports = {
         return new Promise((resolve, reject) => {
             User.findOne({_id: req.user._id})
             .then(user => {
-                return resolve({ isAuth: true, firstname: req.user.firstname, lastname: req.user.lastname, email: req.user.email, id: req.user._id})
+                return resolve({ isAuth: true, firstname: req.user.firstname, lastname: req.user.lastname, email: req.user.email, id: req.user._id, role: req.user.role})
             })
             .catch(error => {
                 return reject(error)
@@ -76,6 +76,17 @@ module.exports = {
                 }
             });
         });
-    }
+    },
+    getUsers: function(req){
+        return new Promise((resolve, reject) => {
+            User.find({})
+            .then(users => {
+                return resolve(users)
+            })
+            .catch(error => {
+                return reject(error)
+            })
+        });
+    },
 }
 

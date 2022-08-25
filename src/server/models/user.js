@@ -39,6 +39,9 @@ const userSchema=mongoose.Schema({
     },
     resetPasswordExpires: {
         type: Date
+    },
+    role: {
+        type: String
     }
 });
 

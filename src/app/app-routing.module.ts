@@ -22,7 +22,8 @@ const routes: Routes = [
   { path: 'user/changePassword', component: ChangePasswordComponent },
   { path: 'check-investment-readiness', component: CheckInvestmentReadinessComponent },
   { path: 'investment-readiness-score', component: ScoreComponent },
-  { path: 'action-items', component: ActionItemsComponent },
+  { path: 'investment-readiness-score/:id', component: ScoreComponent },
+  { path: 'action-items/:id', component: ActionItemsComponent },
 ];
 
 @NgModule({

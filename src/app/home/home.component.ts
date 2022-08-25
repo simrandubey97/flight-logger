@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     currentUserSubscription: Subscription;
     users: User[] = [];
     scoreGenerated: boolean = false;
+    usersList: any = [];
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -30,6 +31,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ) {
     this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
       this.currentUser = user;
+      
       if(!this.currentUser){
         this.router.navigate(['/login']);
       }
@@ -38,16 +40,29 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.userService.getUserDetails();
-    this.scoreService.getScoreByUserId({userId: this.currentUser._id}).subscribe(
-      response =>{
-        if(response){
-          this.scoreGenerated = true;
+    if(this.currentUser.role === 'user'){
+      this.scoreService.getScoreByUserId({userId: this.currentUser._id}).subscribe(
+        response =>{
+          if(response){
+            this.scoreGenerated = true;
+          }
+        },
+        error =>{
+          this.alertService.error(error.error.message);
         }
-      },
-      error =>{
-        this.alertService.error(error.error.message);
-      }
-    )
+      )
+    }else{
+      this.userService.getUsers().subscribe(
+        response =>{
+          if(Array.isArray(response)){
+            this.usersList = response.filter(response => response.role !== 'admin');
+          }
+        },
+        error =>{
+          this.alertService.error(error.error.message);
+        }
+      )
+    }
     // this.loadAllUsers();
   }
 

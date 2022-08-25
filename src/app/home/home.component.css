@@ -23,3 +23,17 @@
 .row{
     margin: 0%;
 }
+table{
+    margin: 20px;
+}
+th{
+    padding: 30px;
+    border: 1px solid black;
+}
+td {
+    padding: 5px 30px;
+    border: 1px solid black;
+}
+.container{
+    margin: 0 250px;
+}

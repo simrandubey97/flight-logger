@@ -240,7 +240,7 @@ module.exports = {
                 for (let j = 0; j < finalArray.length; j++) {
                     let categoryName = finalArray[j].name;
                     let num = finalArray[j].ratio * finalArray[j].weightage;
-                    let weightage = finalArray[i].weightage;
+                    let weightage = finalArray[j].weightage;
                     let data = { categoryName, num, weightage};
                     finaldata.push(data);
                 }

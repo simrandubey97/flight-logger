@@ -5,7 +5,8 @@ const config={
     },
     default : {
         SECRET: 'mysecretkey',
-        DATABASE: 'mongodb://localhost:27017/flight-logger'
+        // DATABASE: 'mongodb://localhost:27017/flight-logger'
+        DATABASE: 'mongodb+srv://simran:test@123@cluster0.60ern.mongodb.net/?retryWrites=true&w=majority'
     }
 }
 
